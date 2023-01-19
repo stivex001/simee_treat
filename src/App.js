@@ -1,8 +1,22 @@
+import { Route, Routes } from "react-router-dom";
+
+// Pages
+import { Home, Contact } from "./pages";
+
+//  Components
+import { Header, Footer , Annocements} from "./components";
+
 function App() {
   return (
-    <div >
-     you are welcome
-    </div>
+    <>
+    <Annocements />
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
 
