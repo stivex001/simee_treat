@@ -4,12 +4,12 @@ import { Route, Routes } from "react-router-dom";
 import { Home, Contact } from "./pages";
 
 //  Components
-import { Header, Footer , Annocements} from "./components";
+import { Header, Footer } from "./components";
 
 function App() {
   return (
     <>
-    <Annocements />
+    {/* <Annocements /> */}
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

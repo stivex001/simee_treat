@@ -1,35 +1,81 @@
-
+import { Menu } from "@mui/icons-material";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import { MenuItem } from "@mui/material";
 import Badge from "@mui/material/Badge";
-import { NavLink } from "react-router-dom";
-import Container, { Center, Left, Logo, Right, Wrapper } from "./header.styles";
+import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import styles from './Header.module.scss'
 
+const logo = (
+  <div className={styles.logo}>
+    <Link to="/">
+      <h2>
+        Simee.<span>Treat</span> 
+      </h2>
+    </Link>
+  </div>
+);
 
+const cart = (
+  <span className={styles.cart}>
+              <NavLink to="/cart">
+                <Badge badgeContent={4} color="primary">
+                  <ShoppingCartOutlinedIcon />
+                </Badge>
+              </NavLink>
+            </span>
+)
 
 const Header = () => {
+  const [showMenu, setShowMenu] = useState(false)
+
+  const toggleMenu = () => {
+    setShowMenu(showMenu => !showMenu)
+  }
+
+  // const hideMenu = () => {
+  //   setShowMenu(prev => !prev)
+  // }
+
   return (
-    <Container>
-      <Wrapper>
-        <Left>
-          <Logo>Simee Treat.</Logo>
-        </Left>
-        <Center>
-          <MenuItem><NavLink style={{textDecoration: 'none'}} to="/admin">ADMIN </NavLink> </MenuItem>
-          <MenuItem><NavLink style={{textDecoration: 'none'}} to="/about">ABOUT US </NavLink></MenuItem>
-          <MenuItem><NavLink style={{textDecoration: 'none'}} to="/contact">CONTACT US </NavLink> </MenuItem>
-        </Center>
-        <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
-          <MenuItem>
-            <Badge badgeContent={4} color="primary">
-              <ShoppingCartOutlinedIcon />
-            </Badge>
-          </MenuItem>
-        </Right>
-      </Wrapper>
-    </Container>
+    <header>
+      <div className={styles.header}>
+        {logo}
+
+        <nav className={
+              showMenu ? `${styles["show-nav"]}` : `${styles["hide-nav"]}`
+            }>
+          <div className={
+                showMenu
+                  ? `${styles["nav-wrapper"]} ${styles["show-nav-wrapper"]}`
+                  : `${styles["nav-wrapper"]}`
+              }>
+              </div>
+          <ul>
+            <li>
+              <Link to="/admin">Admin</Link>
+            </li>
+            <li>
+              <Link to="/about">About Us</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact Us</Link>
+            </li>
+          </ul>
+          <div className={styles["header-right"]}>
+            <span className={styles.links}>
+              <NavLink to="/login">Login</NavLink>
+              <NavLink to="/register">Register</NavLink>
+            </span>
+            {cart}
+          </div>
+        </nav>
+
+        <div className={styles["menu-icon"]}>
+          {cart}
+          <Menu  style={{fontSize: '50px'}} onClick={toggleMenu} />
+        </div>
+      </div>
+    </header>
   );
 };
 

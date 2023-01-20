@@ -2,7 +2,7 @@ import { ArrowLeft, ArrowRight } from "@mui/icons-material";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { sliderData } from "./slider-data";
-import { Arrow, Button, Container, Desc, Image, ImgContainer, InfoContainer, Slide, Title, Wrapper } from "./slider.styles";
+import  './slider.scss'
 
 
 
@@ -26,49 +26,82 @@ const Slider = () => {
     setCurrentSlide(0);
   }, []);
 
-  function auto() {
-    slideInterval = setInterval(nextSlide, intervalTime);
-  }
+//   function auto() {
+//     slideInterval = setInterval(nextSlide, intervalTime);
+//   }
 
-  useEffect(() => {
+useEffect(() => {
     if (autoScroll) {
+      const auto = () => {
+        slideInterval = setInterval(nextSlide, intervalTime);
+      };
       auto();
     }
     return () => clearInterval(slideInterval);
-  });
+  }, [currentSlide, slideInterval, autoScroll]);
+
 
   return (
-    <Container>
-      <Arrow direction="left" onClick={prevSlide}>
-        <ArrowLeft />
-      </Arrow>
-      <Arrow direction="right" onClick={nextSlide}>
-        <ArrowRight />
-      </Arrow>
-      <Wrapper>
-        {sliderData.map((slide, index) => (
-          <Slide
-            bg={slide.bg}
+    <div className="slider">
+      <ArrowLeft className="arrow prev" onClick={prevSlide} />
+      <ArrowRight className="arrow next" onClick={nextSlide} />
+
+      {sliderData.map((slide, index) => {
+        const { image, heading, desc } = slide;
+        return (
+          <div
             key={index}
+            className={index === currentSlide ? "slide current" : "slide"}
           >
             {index === currentSlide && (
               <>
-                <ImgContainer>
-                  <Image src={slide.image} alt={slide.heading} />
-                </ImgContainer>
-
-                <InfoContainer> 
-                  <Title>{slide.heading}</Title>
-                  <Desc>{slide.desc}</Desc>
-                  <Button>SHOP NOW</Button>
-                </InfoContainer>
+                <img src={image} alt="slide" />
+                <div className="content">
+                  <h2>{heading}</h2>
+                  <p>{desc}</p>
+                  <hr />
+                  <a href="#product" className="--btn --btn-primary">
+                    Shop Now
+                  </a>
+                </div>
               </>
             )}
-          </Slide>
-        ))}
-      </Wrapper>
-    </Container>
+          </div>
+        );
+      })}
+    </div>
   );
 };
+
+
+    // <Container>
+    //   <Arrow direction="left" onClick={prevSlide}>
+    //     <ArrowLeft />
+    //   </Arrow>
+    //   <Arrow direction="right" onClick={nextSlide}>
+    //     <ArrowRight />
+    //   </Arrow>
+    //     {sliderData.map((slide, index) => (
+    //       <Slide
+    //         // bg={slide.bg}
+    //         key={index}
+    //         className={index === currentSlide && ' current' }
+    //       >
+    //         {index === currentSlide && (
+    //           <>
+    //             <ImgContainer>
+    //               <Image src={slide.image} alt={slide.heading} />
+    //             </ImgContainer>
+
+    //             <InfoContainer> 
+    //               <Title>{slide.heading}</Title>
+    //               <Desc>{slide.desc}</Desc>
+    //               <Button>SHOP NOW</Button>
+    //             </InfoContainer>
+    //           </>
+    //         )}
+    //       </Slide>
+    //     ))}
+    // </Container>
 
 export default Slider;
