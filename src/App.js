@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 
 // Pages
-import { Home, Contact, Categories } from "./pages";
+import { Home, Contact, Categories, ProductList } from "./pages";
 
 //  Components
 import { Header, Footer } from "./components";
@@ -15,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/categories" element={<Categories />} />
+        <Route path="/products" element={<ProductList />} />
       </Routes>
       <Footer />
     </>
