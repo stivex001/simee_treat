@@ -1,6 +1,7 @@
 import { ArrowLeft, ArrowRight } from "@mui/icons-material";
 import React, { useState } from "react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { sliderData } from "./slider-data";
 import  './slider.scss'
 
@@ -60,9 +61,9 @@ useEffect(() => {
                   <h2>{heading}</h2>
                   <p>{desc}</p>
                   <hr />
-                  <a href="#product" className="--btn --btn-primary">
+                  <Link to="/products" className="--btn --btn-primary">
                     Shop Now
-                  </a>
+                  </Link>
                 </div>
               </>
             )}

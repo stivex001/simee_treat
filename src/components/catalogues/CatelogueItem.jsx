@@ -48,7 +48,7 @@ const CatelogueItem = ({item}) => {
         <Image src={item.img} />
         <Info>
             <Title>{item.title}</Title>
-            <Button><Link to='/categories'>CHECK MORE</Link></Button>
+            <Button><Link to='/products'>CHECK MORE</Link></Button>
         </Info>
     </Container>
   )

@@ -1,88 +1,96 @@
-import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartCheckoutOutlined } from "@mui/icons-material";
+import {
+  FavoriteBorderOutlined,
+  SearchOutlined,
+  ShoppingCartCheckoutOutlined,
+} from "@mui/icons-material";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 
 const Info = styled.div`
-opacity: 0;
-width: 100%;
-height: 100%;
-position: absolute;
-top: 0;
-left: 0;
-background-color: rgba(0,0,0,0.2);
-z-index: 3;
-display: flex;
-align-items: center;
-justify-content: center;
-transition: all 0.5s ease;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
 `;
 
 const Container = styled.div`
-flex: 1;
-margin: 5px;
-min-width: 280px;
-height: 350px;
-display: flex;
-justify-content: center;
-align-items: center;
-background-color: #f5fbfd;
-position: relative;
+  flex: 1;
+  margin: 5px;
+  min-width: 280px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5fbfd;
+  position: relative;
 
-&:hover ${Info} {
+  &:hover ${Info} {
     opacity: 1;
-}
-// ${mobile({padding: '0px'})}
+  }
+  // ${mobile({ padding: "0px" })}
 `;
 const Circle = styled.div`
-width: 200px;
-height: 200px;
-border-radius: 50%;
-background-color: white;
-position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
 `;
 const Image = styled.img`
-width: 100%;
-height: 75%;
-object-fit: cover;
-z-index: 2;
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+  z-index: 2;
 `;
 
 const Icon = styled.div`
-width: 40px;
-height: 40px;
-border-radius: 50%;
-background-color: white;
-display: flex;
-align-items: center;
-justify-content: center;
-margin: 10px;
-transition: all 0.5s ease;
-cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  transition: all 0.5s ease;
+  cursor: pointer;
 
-&:hover {
+  &:hover {
     background-color: #e9f5f5;
-    transform: scale(1.1)
-}
+    transform: scale(1.1);
+  }
 `;
 
-const Product = ({item}) => {
+const Product = ({ item }) => {
   return (
     <Container>
-        <Circle />
-        <Image src={item.img} />
-        <Info>
-            <Icon>
-                <ShoppingCartCheckoutOutlined />
-            </Icon>
-            <Icon>
-                <SearchOutlined />
-            </Icon>
-            <Icon>
-                <FavoriteBorderOutlined />
-            </Icon>
-        </Info>
-    </Container>
-  )
-}
+      <Circle />
+      <Image src={item.img} />
+      <Info>
+        <Icon>
+          <ShoppingCartCheckoutOutlined />
+        </Icon>
 
-export default Product
+        <Link to="/product">
+          <Icon>
+            <SearchOutlined />
+          </Icon>
+        </Link>
+        <Icon>
+          <FavoriteBorderOutlined />
+        </Icon>
+      </Info>
+    </Container>
+  );
+};
+
+export default Product;
