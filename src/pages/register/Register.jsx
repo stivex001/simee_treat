@@ -14,10 +14,10 @@ const Register = () => {
       <Wrapper>
         <Title>CREATE AN ACCOUNT</Title>
         <Form>
-          <Input placeholder="name" />
-          <Input placeholder="name" />
-          <Input placeholder="name" />
-          <Input placeholder="name" />
+          <Input placeholder="firstname" />
+          <Input placeholder="lastname" />
+          <Input placeholder="username" />
+          <Input placeholder="password" />
           <Input placeholder="name" />
           <Input placeholder="name" />
           <Agreement>
