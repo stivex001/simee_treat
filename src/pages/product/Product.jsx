@@ -1,6 +1,7 @@
 import { Add, Remove } from "@mui/icons-material";
 import styled from "styled-components";
 import { mobile } from "../../responsive";
+import meatpie from '../../assets/meatpie.jpg'
 
 const Container = styled.div``;
 
@@ -115,7 +116,7 @@ const Product = () => {
       <Wrapper>
         <ImageContainer>
           <Image
-            src="https://media.istockphoto.com/id/1412574458/photo/empanadas.jpg?b=1&s=170667a&w=0&k=20&c=4AvcA-bCBZCkNGAwNYzt95ZWRSUyj2H2mShcqB27XUA="
+            src={meatpie}
             alt="jsdkhudsh"
           />
         </ImageContainer>

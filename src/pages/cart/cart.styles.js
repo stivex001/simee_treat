@@ -36,6 +36,7 @@ export const TopText = styled.span`
 text-decoration: underline;
 cursor: pointer;
 margin: 0px 10px;
+font-size: 20px;
 `;
 
 export const Bottom = styled.div`
@@ -71,8 +72,12 @@ display: flex;
 flex-direction: column;
 justify-content: space-around;
 `;
-export const ProductName = styled.div``;
-export const ProductId = styled.span``;
+export const ProductName = styled.h1`
+font-size: 20px;
+`;
+export const ProductId = styled.span`
+font-size: 20px;
+`;
 
 export const ProductColor = styled.span`
 width: 20px;
@@ -80,7 +85,9 @@ height: 20px;
 border-radius: 50%;
 background-color: ${props => props.color}
 `;
-export const ProductSize = styled.span``;
+export const ProductSize = styled.span`
+font-size: 20px;
+`;
 
 export const PriceDetail = styled.span`
 flex: 1;

@@ -1,3 +1,4 @@
+import { Search } from "@mui/icons-material";
 import styled from "styled-components";
 import Newsletter from "../../components/Newsletter";
 import Products from "../../components/Products";
@@ -33,6 +34,24 @@ ${mobile({margin: '10px 0px'})}
 
 const Option = styled.option``;
 
+const SearchContainer = styled.div`
+width: 20%;
+border: 1px solid lightgray;
+display: flex;
+align-items: center;
+margin-left: 25px;
+padding: 5px;
+${mobile({width: '70%'})}
+`;
+
+const Input = styled.input`
+border: none;
+
+&:focus {
+  outline: none;
+}
+`;
+
 const ProductList = () => {
   return (
     <Container>
@@ -42,13 +61,16 @@ const ProductList = () => {
           <FilterText>Filter Products:</FilterText>
           <Select>
             <Option disabled selected>
-              Color
+              Cakes
             </Option>
-            <Option>Chocolate</Option>
-            <Option>Black</Option>
-            <Option>Blue</Option>
-            <Option>Yellow</Option>
-            <Option>Green</Option>
+            <Option>Celebration Cakes</Option>
+            <Option>CupCakes</Option>
+            <Option>Foil Cakes</Option>
+            <Option>Chinchin</Option>
+            <Option>Doughnut</Option>
+            <Option>Meatpie</Option>
+            <Option>Fishroll</Option>
+            <Option>Eggroll</Option>
           </Select>
           <Select>
             <Option disabled selected>
@@ -70,7 +92,12 @@ const ProductList = () => {
           </Select>
         </Filter>
       </FilterContainer>
-
+      
+        <SearchContainer>
+          <Search />
+          <Input placeholder="search for products...." />
+        </SearchContainer>
+      
       <Products />
       <Newsletter />
     </Container>

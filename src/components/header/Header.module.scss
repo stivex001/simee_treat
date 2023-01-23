@@ -49,6 +49,7 @@ header {
         margin: 0 5px;
         a {
           color: #fff;
+          font-size: 20px;
           &:hover {
             color: orangered;
           }
@@ -80,15 +81,18 @@ header {
 
     span {
       margin: 0 5px;
+      
 
       p {
         color: #fff;
+        
       }
     }
 
     .links a {
       margin: 0 5px;
       color: #fff;
+      font-size: 20px;
       &:hover {
         color: orangered;
       }

@@ -1,3 +1,19 @@
+import cake1 from '../../assets/cake1.jpg'
+import cake2 from '../../assets/cake2.jpg'
+import cake3 from '../../assets/cake3.jpg'
+import cake4 from '../../assets/cake4.jpg'
+import cake5 from '../../assets/cake5.jpg'
+import cake6 from '../../assets/cake6.jpg'
+import cake7 from '../../assets/cake7.jpg'
+import cake8 from '../../assets/cake8.jpg'
+import chinchin from '../../assets/chinchin.jpg'
+import chinchin3 from '../../assets/chinchin3.jpg'
+import eggroll from '../../assets/eggroll.jpg'
+import meatpie from '../../assets/meatpie.jpg'
+import cupcakes from '../../assets/cupcakes.jpg'
+import doughnut from '../../assets/doughnut.jpg'
+import nakedcake from '../../assets/nakedcake.jpg'
+
 export const catelogue = [
     {
         id: 1,
@@ -20,34 +36,62 @@ export const catelogue = [
 export const popularProducts = [
     {
         id: 1,
-        img: 'https://media.istockphoto.com/id/1412574458/photo/empanadas.jpg?b=1&s=170667a&w=0&k=20&c=4AvcA-bCBZCkNGAwNYzt95ZWRSUyj2H2mShcqB27XUA='
+        img: meatpie
     },
     {
         id: 2,
-        img: 'https://media.istockphoto.com/id/1394525453/photo/cherry-turnover-made-with-pie-filling-and-puff-pastry.jpg?b=1&s=170667a&w=0&k=20&c=_iB90z5Y6ClkVeYx1-lT19gS6oR6rMDJ5VhZlOdyLQk='
+        img:cake1
     },
     {
         id: 3,
-        img: 'https://media.istockphoto.com/id/1359974158/photo/top-view-of-table-with-french-or-continental-breakfast-with-espresso-coffee-and-croissant.jpg?b=1&s=170667a&w=0&k=20&c=eME98NBDzEzn-JgJuSctcTCMQR609gRzHDCeSkIqecg='
+        img: cake2
     },
     {
         id: 4,
-        img: 'https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cGFzdHJpZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60'
+        img:eggroll
     },
     {
         id: 5,
-        img: 'https://images.unsplash.com/photo-1603532648955-039310d9ed75?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGFzdHJpZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60'
+        img: nakedcake
     },
     {
         id: 6,
-        img: 'https://images.unsplash.com/photo-1509365465985-25d11c17e812?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBhc3RyaWVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60'
+        img:cake3
     },
     {
         id: 7,
-        img: 'https://media.istockphoto.com/id/1437813959/photo/whole-vegan-orange-and-walnuts-cake-on-purple-surface.jpg?b=1&s=170667a&w=0&k=20&c=g2DWvhEGUqoha1t46wbu_BSXB9tcwfqsfmmFtUeX29I='
+        img: chinchin
     },
     {
         id: 8,
-        img: 'https://media.istockphoto.com/id/1355121373/photo/christmas-stollen-bread-with-candied-fruit.jpg?b=1&s=170667a&w=0&k=20&c=svbbGJ64kNWjypLJ87Qs_4gdaLxGTy8CrD9PuyAQzc8='
+        img:chinchin3
+    },
+    {
+        id: 9,
+        img:cupcakes
+    },
+    {
+        id: 10,
+        img:cake4
+    },
+    {
+        id: 11,
+        img:cake5
+    },
+    {
+        id: 12,
+        img:cake6
+    },
+    {
+        id: 13,
+        img:cake7
+    },
+    {
+        id: 14,
+        img:cake8
+    },
+    {
+        id: 15,
+        img:doughnut
     },
 ]

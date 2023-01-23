@@ -64,6 +64,7 @@ const List = styled.ul`
 const ListItem = styled.li`
   width: 50%;
   margin-bottom: 20px;
+  font-size: 18px;
 `;
 
 const Right = styled.div`
@@ -72,10 +73,11 @@ const Right = styled.div`
   ${mobile({backgroundColor: '#fff8f8'})}
 `;
 
-const ContactItem = styled.div`
+const ContactItem = styled.p`
 margin-bottom: 20px;
 display: flex;
 align-items: center;
+font-size: 20px;
 `;
 
 const Payment = styled.img`
