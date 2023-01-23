@@ -1,7 +1,37 @@
 import { Add, Remove } from "@mui/icons-material";
-import { Bottom, Container, Details, Hr, Image, Info, PriceDetail, Product, ProductAmount, ProductAmountContainer, ProductColor, ProductDetail, ProductId, ProductName, ProductPrice, ProductSize, Summary, SummaryButton, SummaryItem, SummaryItemPrice, SummaryItemText, SummaryTitle, Title, Top, TopButton, TopText, TopTexts, Wrapper } from "./cart.styles";
+import {
+  Bottom,
+  Container,
+  Details,
+  Hr,
+  Image,
+  Info,
+  PriceDetail,
+  Product,
+  ProductAmount,
+  ProductAmountContainer,
+  ProductColor,
+  ProductDetail,
+  ProductId,
+  ProductName,
+  ProductPrice,
+  ProductSize,
+  Summary,
+  SummaryButton,
+  SummaryItem,
+  SummaryItemPrice,
+  SummaryItemText,
+  SummaryTitle,
+  Title,
+  Top,
+  TopButton,
+  TopText,
+  TopTexts,
+  Wrapper,
+} from "./cart.styles";
 
-
+import cake5 from "../../assets/cake5.jpg";
+import cake6 from "../../assets/cake6.jpg";
 
 const Cart = () => {
   return (
@@ -11,8 +41,8 @@ const Cart = () => {
         <Top>
           <TopButton>CONTINUE SHOPPING</TopButton>
           <TopTexts>
-          <TopText>Shopping Bag(2)</TopText>
-          <TopText>Your Wishlist (0)</TopText>
+            <TopText>Shopping Bag(2)</TopText>
+            <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
           <TopButton type="filled">CHECKOUT NOW</TopButton>
         </Top>
@@ -20,18 +50,24 @@ const Cart = () => {
           <Info>
             <Product>
               <ProductDetail>
-                <Image src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGJha2VyeXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60" />
+                <Image src={cake5} />
                 <Details>
-                  <ProductName><b>Product:</b> SUMPTIOUS VANNILA CUPCAKES</ProductName>
-                  <ProductId><b>ID:</b> 545645454545</ProductId>
+                  <ProductName>
+                    <b>Product:</b> SUMPTIOUS VANNILA CAKE
+                  </ProductName>
+                  <ProductId>
+                    <b>ID:</b> 545645454545
+                  </ProductId>
                   <ProductColor color="black" />
-                  <ProductSize><b>Size:</b> 37</ProductSize>
+                  <ProductSize>
+                    <b>Size:</b> 37
+                  </ProductSize>
                 </Details>
               </ProductDetail>
               <PriceDetail>
                 <ProductAmountContainer>
                   <Add />
-                    <ProductAmount>2</ProductAmount>
+                  <ProductAmount>2</ProductAmount>
                   <Remove />
                 </ProductAmountContainer>
                 <ProductPrice>#1500</ProductPrice>
@@ -40,24 +76,29 @@ const Cart = () => {
             <Hr />
             <Product>
               <ProductDetail>
-                <Image src="https://images.unsplash.com/photo-1583338917451-face2751d8d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YmFrZXJ5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60" />
+                <Image src={cake6} />
                 <Details>
-                  <ProductName><b>Product:</b> GLUTTEN FREE  PANCAKES</ProductName>
-                  <ProductId><b>ID:</b> 545644654545</ProductId>
+                  <ProductName>
+                    <b>Product:</b> GLUTTEN FREE CAKE
+                  </ProductName>
+                  <ProductId>
+                    <b>ID:</b> 545644654545
+                  </ProductId>
                   <ProductColor color="black" />
-                  <ProductSize><b>Size:</b> 48</ProductSize>
+                  <ProductSize>
+                    <b>Size:</b> 48
+                  </ProductSize>
                 </Details>
               </ProductDetail>
               <PriceDetail>
                 <ProductAmountContainer>
                   <Add />
-                    <ProductAmount>1</ProductAmount>
+                  <ProductAmount>1</ProductAmount>
                   <Remove />
                 </ProductAmountContainer>
                 <ProductPrice>#2500</ProductPrice>
               </PriceDetail>
             </Product>
-
           </Info>
           <Summary>
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
@@ -74,7 +115,7 @@ const Cart = () => {
               <SummaryItemPrice># -200</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem type="total">
-              <SummaryItemText >Total</SummaryItemText>
+              <SummaryItemText>Total</SummaryItemText>
               <SummaryItemPrice>#5100</SummaryItemPrice>
             </SummaryItem>
             <SummaryButton>CHECKOUT NOW</SummaryButton>
@@ -82,7 +123,7 @@ const Cart = () => {
         </Bottom>
       </Wrapper>
     </Container>
-  )
-}
+  );
+};
 
-export default Cart
+export default Cart;
