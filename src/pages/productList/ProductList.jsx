@@ -1,17 +1,38 @@
 import { Search } from "@mui/icons-material";
+import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import Newsletter from "../../components/Newsletter";
 import Products from "../../components/Products";
 import { Container, Filter, FilterContainer, FilterText, Input, Option, SearchContainer, Select, Title } from "./productList.styles";
 
 
 const ProductList = () => {
+
+  const location = useLocation()
+  const cat = location.pathname.split("/")[2];
+  const [catFilters, setCatFilter] = useState({})
+  const [catSort, setCatSort] = useState("newest")
+
+  const filterChangeHandler = (e) => {
+    const value = e.target.value
+    setCatFilter({
+      ...catFilters,
+      [e.target.name] : value
+    })
+  }
+
+  const catSortHandler = (e) => {
+    setCatSort(e.target.value)
+  }
+
+
   return (
     <Container>
       <Title>Our Products</Title>
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products:</FilterText>
-          <Select>
+          <Select name="categories" onChange={filterChangeHandler}>
             <Option disabled >
               Cakes
             </Option>
@@ -26,8 +47,8 @@ const ProductList = () => {
             <Option>Eggroll</Option>
             <Option>Puff Puff</Option>
           </Select>
-          <Select>
-            <Option disabled selected>
+          <Select name="price" onChange={filterChangeHandler}>
+            <Option disabled >
               Price
             </Option>
             <Option>#5000</Option>
@@ -39,10 +60,10 @@ const ProductList = () => {
         </Filter>
         <Filter>
           <FilterText>Sort Products:</FilterText>
-          <Select>
-            <Option selected>Newest</Option>
-            <Option>Price (asc)</Option>
-            <Option>Price (desc)</Option>
+          <Select onChange={catSortHandler}>
+            <Option value='newest'>Newest</Option>
+            <Option value='asc'>Price (asc)</Option>
+            <Option value='desc'>Price (desc)</Option>
           </Select>
         </Filter>
       </FilterContainer>
@@ -52,7 +73,7 @@ const ProductList = () => {
           <Input placeholder="search for products...." />
         </SearchContainer>
       
-      <Products />
+      <Products cat={cat} filters={catFilters} sort={catSort} />
       <Newsletter />
     </Container>
   );

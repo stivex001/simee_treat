@@ -11,7 +11,7 @@ position: relative;
 `;
 const Image = styled.img`
 width: 100%;
-height: 100%;
+height: 85%;
 obeject-fit: cover;
 ${mobile({height: '40vh'})}
 `
