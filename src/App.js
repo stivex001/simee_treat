@@ -7,6 +7,7 @@ import { Home, Contact, Categories, ProductList, Product, Register, Login, Cart 
 import { Header, Footer } from "./components";
 
 function App() {
+  // const user = true
   return (
     <>
     {/* <Annocements /> */}
@@ -16,9 +17,9 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/products" element={<ProductList />} />
-        <Route path="/product" element={<Product />} />
+        <Route path="/product/:id" element={<Product />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login />} ></Route>
         <Route path="/cart" element={<Cart />} />
       </Routes>
       <Footer />

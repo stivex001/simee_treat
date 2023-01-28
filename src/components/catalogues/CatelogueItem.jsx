@@ -45,11 +45,13 @@ font-weight: 600;
 const CatelogueItem = ({item}) => {
   return (
     <Container>
+      <Link to={`/products/${item.cat}`}>
         <Image src={item.img} />
         <Info>
             <Title>{item.title}</Title>
-            <Button><Link to='/products'>CHECK MORE</Link></Button>
+            <Button>CHECK MORE</Button>
         </Info>
+        </Link>
     </Container>
   )
 }

@@ -18,17 +18,20 @@ export const catelogue = [
     {
         id: 1,
         img: 'https://images.unsplash.com/photo-1627834377411-8da5f4f09de8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTZ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
-        title: 'BIRTDAY CAKE'
+        title: 'BIRTDAY CAKE',
+        cat: "cakes"
     },
     {
         id: 2,
         img: 'https://images.unsplash.com/photo-1623428454614-abaf00244e52?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8d2VkZGluZyUyMGNha2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
-        title: 'WEDDING CAKE'
+        title: 'WEDDING CAKE',
+        cat: "celebration cakes"
     },
     {
         id: 3,
         img: 'https://images.unsplash.com/photo-1607478900766-efe13248b125?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjB8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
-        title: 'VANILLA CUPCAKES'
+        title: 'VANILLA CUPCAKES',
+        cat: "snacks"
     },
     
 ]

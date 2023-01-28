@@ -1,76 +1,30 @@
 import { Search } from "@mui/icons-material";
-import styled from "styled-components";
 import Newsletter from "../../components/Newsletter";
 import Products from "../../components/Products";
-import { mobile } from "../../responsive";
+import { Container, Filter, FilterContainer, FilterText, Input, Option, SearchContainer, Select, Title } from "./productList.styles";
 
-const Container = styled.div``;
-
-const Title = styled.h1`
-  margin: 20px;
-`;
-
-const FilterContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const Filter = styled.div`
-  margin: 20px;
-  ${mobile({margin: '10px 20px', display: 'flex', flexDirection: 'column'})}
-`;
-
-const FilterText = styled.span`
-  font-size: 20px;
-  font-weight: 600;
-  ${mobile({marginRight: '0px'})}
-`;
-
-const Select = styled.select`
-padding: 10px;
-margin-right: 20px;
-${mobile({margin: '10px 0px'})}
-`;
-
-const Option = styled.option``;
-
-const SearchContainer = styled.div`
-width: 20%;
-border: 1px solid lightgray;
-display: flex;
-align-items: center;
-margin-left: 25px;
-padding: 5px;
-${mobile({width: '70%'})}
-`;
-
-const Input = styled.input`
-border: none;
-
-&:focus {
-  outline: none;
-}
-`;
 
 const ProductList = () => {
   return (
     <Container>
-      <Title>Cakes</Title>
+      <Title>Our Products</Title>
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products:</FilterText>
           <Select>
-            <Option disabled selected>
+            <Option disabled >
               Cakes
             </Option>
             <Option>Celebration Cakes</Option>
+            <Option>Plain Cakes</Option>
             <Option>CupCakes</Option>
-            <Option>Foil Cakes</Option>
+            <Option>Pocket Friendly Cakes</Option>
             <Option>Chinchin</Option>
             <Option>Doughnut</Option>
             <Option>Meatpie</Option>
             <Option>Fishroll</Option>
             <Option>Eggroll</Option>
+            <Option>Puff Puff</Option>
           </Select>
           <Select>
             <Option disabled selected>
