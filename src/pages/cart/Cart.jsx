@@ -32,11 +32,19 @@ import {
 
 import { useSelector } from "react-redux";
 import StripeCheckout from "react-stripe-checkout";
+import { useState } from "react";
 
 const KEY = process.env.STRIPE_KEY
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
+  const [stripeToken, setStripeToken] = useState(null)
+
+  const onToken = (token) => {
+    setStripeToken(token)
+    console.log(stripeToken);
+  }
+
   return (
     <Container>
       <Wrapper>
@@ -106,6 +114,7 @@ const Cart = () => {
             shippingAddress
             description={`Your total is #${cart.totalPrice}`}
             amount={cart.totalPrice}
+            token={onToken}
             stripeKay={KEY}
             >
               
