@@ -31,6 +31,9 @@ import {
 } from "./cart.styles";
 
 import { useSelector } from "react-redux";
+import StripeCheckout from "react-stripe-checkout";
+
+const KEY = process.env.STRIPE_KEY
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
