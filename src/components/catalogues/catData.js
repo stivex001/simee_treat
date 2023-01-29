@@ -32,7 +32,7 @@ export const catelogue = [
         id: 3,
         img: nakedcake2,
         title: 'VANILLA CUPCAKES',
-        cat: "cup cakes"
+        cat: "cupcakes"
     },
     
     

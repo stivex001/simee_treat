@@ -28,7 +28,7 @@ const ProductList = () => {
 
   return (
     <Container>
-      <Title>Our Products</Title>
+      <Title>{cat}</Title>
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products:</FilterText>
@@ -36,26 +36,26 @@ const ProductList = () => {
             <Option disabled >
               Cakes
             </Option>
-            <Option>Celebration Cakes</Option>
-            <Option>Plain Cakes</Option>
-            <Option>CupCakes</Option>
-            <Option>Pocket Friendly Cakes</Option>
-            <Option>Chinchin</Option>
-            <Option>Doughnut</Option>
-            <Option>Meatpie</Option>
-            <Option>Fishroll</Option>
-            <Option>Eggroll</Option>
-            <Option>Puff Puff</Option>
+            <Option>celebration cakes</Option>
+            <Option>plain cakes</Option>
+            <Option>cup cakes</Option>
+            <Option>pocket friendly cakes</Option>
+            <Option>chinchin</Option>
+            <Option>doughnut</Option>
+            <Option>meatpie</Option>
+            <Option>fishroll</Option>
+            <Option>eggroll</Option>
+            <Option>puffpuff</Option>
           </Select>
           <Select name="price" onChange={filterChangeHandler}>
             <Option disabled >
-              Price
+              Size
             </Option>
-            <Option>#5000</Option>
-            <Option>#6000</Option>
-            <Option>#7000</Option>
-            <Option>#8000</Option>
-            <Option>#9000</Option>
+            <Option>6</Option>
+            <Option>7</Option>
+            <Option>8</Option>
+            <Option>9</Option>
+            <Option>10</Option>
           </Select>
         </Filter>
         <Filter>
