@@ -99,7 +99,19 @@ const Cart = () => {
               <SummaryItemText>Total</SummaryItemText>
               <SummaryItemPrice>#{cart.totalPrice}</SummaryItemPrice>
             </SummaryItem>
-            <SummaryButton>CHECKOUT NOW</SummaryButton>
+            <StripeCheckout
+            name="Simee.treat"
+            image="https://avatars.githubusercontent.com/u/1486366?v=4"
+            billingAddress
+            shippingAddress
+            description={`Your total is #${cart.totalPrice}`}
+            amount={cart.totalPrice}
+            stripeKay={KEY}
+            >
+              
+              <SummaryButton>CHECKOUT NOW</SummaryButton>
+            </StripeCheckout>
+            
           </Summary>
         </Bottom>
       </Wrapper>
