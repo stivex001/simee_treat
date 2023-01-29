@@ -8,7 +8,7 @@ import {
   Container,
   Desc,
   Filter,
-  FilterColor,
+  // FilterColor,
   FilterContainer,
   FilterSize,
   FilterSizeOption,
@@ -22,6 +22,8 @@ import {
 } from "./product.styles";
 import { useEffect, useState } from "react";
 import { publicRequest } from "../../requestMethods";
+import { addProduct } from "../../redux/cartRedux";
+import { useDispatch } from "react-redux";
 
 const Product = () => {
   const location = useLocation();
@@ -29,6 +31,7 @@ const Product = () => {
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState("");
+  const dispatch = useDispatch()
 
   useEffect(() => {
     const getProduct = async () => {
@@ -48,7 +51,12 @@ const Product = () => {
     quantity > 1 && setQuantity((prev) => prev - 1);
   };
 
-  const handleClick = () => {};
+  const handleClick = () => {
+    dispatch(
+      addProduct({...product, quantity, size})
+    )
+    
+  };
 
   return (
     <Container>
@@ -77,7 +85,7 @@ const Product = () => {
             </Filter>
           </FilterContainer>
           <AddContainer>
-            <AmountContainer>
+            <AmountContainer onChange={(e) => setQuantity(e.target.value) }>
               <Remove onClick={removeQuantityHandler} />
               <Amount>{quantity}</Amount>
               <Add onClick={addQuantityHandler} />
