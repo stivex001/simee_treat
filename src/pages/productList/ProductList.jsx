@@ -38,7 +38,7 @@ const ProductList = () => {
             </Option>
             <Option>celebration cakes</Option>
             <Option>plain cakes</Option>
-            <Option>cup cakes</Option>
+            <Option>cupcakes</Option>
             <Option>pocket friendly cakes</Option>
             <Option>chinchin</Option>
             <Option>doughnut</Option>
