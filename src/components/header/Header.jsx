@@ -2,6 +2,7 @@ import { Close, Menu } from "@mui/icons-material";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Badge from "@mui/material/Badge";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import styles from "./Header.module.scss";
 
@@ -15,20 +16,11 @@ const logo = (
   </div>
 );
 
-const cart = (
-  <span className={styles.cart}>
-    <NavLink to="/cart">
-      <Badge badgeContent={4} color="primary">
-        <ShoppingCartOutlinedIcon style={{ fontSize: "40px" }} />
-      </Badge>
-    </NavLink>
-  </span>
-);
-
 const activeLink = ({ isActive }) => (isActive ? `${styles.active}` : "");
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const quantity = useSelector((state) => state.cart.quantity);
 
   const toggleMenu = () => {
     setShowMenu((showMenu) => !showMenu);
@@ -87,12 +79,24 @@ const Header = () => {
                 Register
               </NavLink>
             </span>
-            {cart}
+            <span className={styles.cart}>
+              <NavLink to="/cart">
+                <Badge badgeContent={quantity} color="primary">
+                  <ShoppingCartOutlinedIcon style={{ fontSize: "40px" }} />
+                </Badge>
+              </NavLink>
+            </span>
           </div>
         </nav>
 
         <div className={styles["menu-icon"]}>
-          {cart}
+          <span className={styles.cart}>
+            <NavLink to="/cart">
+              <Badge badgeContent={quantity} color="primary">
+                <ShoppingCartOutlinedIcon style={{ fontSize: "40px" }} />
+              </Badge>
+            </NavLink>
+          </span>
           <Menu style={{ fontSize: "50px" }} onClick={toggleMenu} />
         </div>
       </div>
