@@ -30,10 +30,10 @@ import {
   Wrapper,
 } from "./cart.styles";
 
-import cake5 from "../../assets/cake5.jpg";
-import cake6 from "../../assets/cake6.jpg";
+import { useSelector } from "react-redux";
 
 const Cart = () => {
+  const cart = useSelector((state) => state.cart);
   return (
     <Container>
       <Wrapper>
@@ -48,63 +48,41 @@ const Cart = () => {
         </Top>
         <Bottom>
           <Info>
-            <Product>
-              <ProductDetail>
-                <Image src={cake5} />
-                <Details>
-                  <ProductName>
-                    <b>Product:</b> SUMPTIOUS VANNILA CAKE
-                  </ProductName>
-                  <ProductId>
-                    <b>ID:</b> 545645454545
-                  </ProductId>
-                  <ProductColor color="black" />
-                  <ProductSize>
-                    <b>Size:</b> 37
-                  </ProductSize>
-                </Details>
-              </ProductDetail>
-              <PriceDetail>
-                <ProductAmountContainer>
-                  <Add />
-                  <ProductAmount>2</ProductAmount>
-                  <Remove />
-                </ProductAmountContainer>
-                <ProductPrice>#1500</ProductPrice>
-              </PriceDetail>
-            </Product>
+            {cart.products.map((product) => (
+              <Product key={product._id}>
+                <ProductDetail>
+                  <Image src={product.img} />
+                  <Details>
+                    <ProductName>
+                      <b>Product:</b> {product.title}
+                    </ProductName>
+                    <ProductId>
+                      <b>ID:</b> {product._id}
+                    </ProductId>
+                    <ProductColor color="black" />
+                    <ProductSize>
+                      <b>Size:</b> {product.size}
+                    </ProductSize>
+                  </Details>
+                </ProductDetail>
+                <PriceDetail>
+                  <ProductAmountContainer>
+                    <Add />
+                    <ProductAmount>{product.quantity}</ProductAmount>
+                    <Remove />
+                  </ProductAmountContainer>
+                  <ProductPrice>#{product.price * product.quantity}</ProductPrice>
+                </PriceDetail>
+              </Product>
+            ))}
+
             <Hr />
-            <Product>
-              <ProductDetail>
-                <Image src={cake6} />
-                <Details>
-                  <ProductName>
-                    <b>Product:</b> GLUTTEN FREE CAKE
-                  </ProductName>
-                  <ProductId>
-                    <b>ID:</b> 545644654545
-                  </ProductId>
-                  <ProductColor color="black" />
-                  <ProductSize>
-                    <b>Size:</b> 48
-                  </ProductSize>
-                </Details>
-              </ProductDetail>
-              <PriceDetail>
-                <ProductAmountContainer>
-                  <Add />
-                  <ProductAmount>1</ProductAmount>
-                  <Remove />
-                </ProductAmountContainer>
-                <ProductPrice>#2500</ProductPrice>
-              </PriceDetail>
-            </Product>
           </Info>
           <Summary>
             <SummaryTitle>ORDER SUMMARY</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>Subtotal</SummaryItemText>
-              <SummaryItemPrice>#5000</SummaryItemPrice>
+              <SummaryItemPrice>#{cart.totalPrice}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Estimated Shipping</SummaryItemText>
@@ -116,7 +94,7 @@ const Cart = () => {
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>#5100</SummaryItemPrice>
+              <SummaryItemPrice>#{cart.totalPrice}</SummaryItemPrice>
             </SummaryItem>
             <SummaryButton>CHECKOUT NOW</SummaryButton>
           </Summary>
