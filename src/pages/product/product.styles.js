@@ -77,6 +77,7 @@ export const AddContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   ${mobile({ width: "100%" })}
+  cursor: pointer;
 `;
 
 export const AmountContainer = styled.div`
