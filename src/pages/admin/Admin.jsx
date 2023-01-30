@@ -6,6 +6,7 @@ import Home from './home/Home';
 
 const Container = styled.div`
 display: flex;
+margin-top: 10px;
 `;
 
 const Admin = () => {
