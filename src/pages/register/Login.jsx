@@ -29,8 +29,6 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     login(dispatch, { username, password });
-    // setUserName("")
-    // setPassword("")
   };
 
   return (
