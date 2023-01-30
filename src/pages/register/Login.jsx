@@ -13,7 +13,7 @@ import {
 } from "./login.styles";
 
 const Login = () => {
-  const [userName, setUserName] = useState("");
+  const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const { isFetching, error } = useSelector((state) => state.user);
@@ -28,7 +28,9 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    login(dispatch, { userName, password });
+    login(dispatch, { username, password });
+    // setUserName("")
+    // setPassword("")
   };
 
   return (
@@ -42,12 +44,12 @@ const Login = () => {
             placeholder="password"
             onChange={passwordOnChange}
           />
+          {error && <Error>Something went wrong</Error>}
           <Button onClick={handleLogin} disabled={isFetching}>
             LOGIN
           </Button>
           <Link>FORGOT YOUR PASSWORD?</Link>
           <Link>CREATE A NEW ACCOUNT</Link>
-          {error && <Error>Something went wrong</Error>}
         </Form>
       </Wrapper>
     </Container>
