@@ -10,7 +10,7 @@ box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
   margin-right: 20px;
 `;
 const WidgetTitle = styled.span`
-font-size: 32px;
+font-size: 22px;
 font-weight: 600;
 `;
 const WidgetList = styled.ul`
@@ -58,7 +58,7 @@ margin-right: 5px;
 const Widgetsm = () => {
   return (
     <Container>
-        <WidgetTitle>New Joine Members</WidgetTitle>
+        <WidgetTitle>New Members</WidgetTitle>
         <WidgetList>
             <WidgetListItem>
                 <Image src="https://avatars.githubusercontent.com/u/87942124?v=4" />
