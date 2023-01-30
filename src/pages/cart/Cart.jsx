@@ -32,18 +32,37 @@ import {
 
 import { useSelector } from "react-redux";
 import StripeCheckout from "react-stripe-checkout";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { userRequest } from "../../requestMethods";
+import {useNavigate} from "react-router-dom"
 
 const KEY = process.env.STRIPE_KEY
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const [stripeToken, setStripeToken] = useState(null)
+  const navigate = useNavigate()
 
   const onToken = (token) => {
     setStripeToken(token)
     console.log(stripeToken);
   }
+
+  useEffect(()=> {
+    const makeRequest = async () => {
+      try {
+        const res = await userRequest.post("/checkout/payment", {
+          tokenId: stripeToken.id,
+          amount: cart.totalPrice,
+          
+        })
+        navigate("/success", {data: res.data})
+      } catch (error) {
+        
+      }
+    }
+    makeRequest()
+  }, [stripeToken, cart.totalPrice, navigate])
 
   return (
     <Container>
