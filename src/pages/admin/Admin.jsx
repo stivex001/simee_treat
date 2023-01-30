@@ -1,8 +1,11 @@
 import React from 'react'
+import Topbar from '../../components/AdminDashboard/topbar/Topbar'
 
 const Admin = () => {
   return (
-    <div>Admin</div>
+    <div>
+      <Topbar />
+    </div>
   )
 }
 
