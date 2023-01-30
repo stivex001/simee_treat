@@ -2,12 +2,10 @@ import React from 'react'
 import styled from 'styled-components';
 import Sidebar from '../../components/AdminDashboard/sidebar/Sidebar'
 import Topbar from '../../components/AdminDashboard/topbar/Topbar'
+import Home from './home/Home';
 
 const Container = styled.div`
 display: flex;
-`;
-const Other = styled.div`
-flex: 4;
 `;
 
 const Admin = () => {
@@ -16,7 +14,7 @@ const Admin = () => {
       <Topbar />
       <Container>
          <Sidebar />
-         <Other>others</Other>
+         <Home/>
       </Container>
      
     </div>
