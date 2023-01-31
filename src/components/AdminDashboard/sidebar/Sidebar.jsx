@@ -1,5 +1,18 @@
-import { AttachMoney, ChatBubbleOutline, DynamicFeed, LineStyle, MailOutline, PermIdentity, Report, Storefront, Timeline, TrendingUp, WorkOutline } from "@mui/icons-material";
-import React from "react";
+import {
+  AttachMoney,
+  ChatBubbleOutline,
+  DynamicFeed,
+  LineStyle,
+  MailOutline,
+  PermIdentity,
+  Report,
+  Storefront,
+  Timeline,
+  TrendingUp,
+  WorkOutline,
+} from "@mui/icons-material";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -43,23 +56,26 @@ const ListItem = styled.li`
   }
 `;
 const Icon = styled.div`
-margin-right: 5px;
-font-size: 20px;
+  margin-right: 5px;
+  font-size: 20px;
 `;
 
 const Sidebar = () => {
+  
+
   return (
     <Container>
       <Wrapper>
         <Menu>
           <Title>Dashboard</Title>
           <List>
-            <ListItem>
+            <ListItem >
               <Icon>
                 <LineStyle />
               </Icon>
               Home
             </ListItem>
+
             <ListItem>
               <Icon>
                 <Timeline />
@@ -77,12 +93,15 @@ const Sidebar = () => {
         <Menu>
           <Title>Quick Menu</Title>
           <List>
-            <ListItem>
-              <Icon>
-                <PermIdentity />
-              </Icon>
-              Users
-            </ListItem>
+            <Link to="/users">
+              <ListItem>
+                <Icon>
+                  <PermIdentity />
+                </Icon>
+                Users
+              </ListItem>
+            </Link>
+
             <ListItem>
               <Icon>
                 <Storefront />

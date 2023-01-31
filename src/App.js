@@ -2,7 +2,6 @@ import { Route, Routes, Navigate } from "react-router-dom";
 
 // Pages
 import {
-  Home,
   Contact,
   Categories,
   ProductList,
@@ -12,6 +11,7 @@ import {
   Cart,
   Success,
   Admin,
+  Home,
 } from "./pages";
 
 //  Components
@@ -22,11 +22,10 @@ function App() {
   const user = useSelector((state) => state.user.currentUser);
   return (
     <>
-    <Routes>
-        <Route path="/admin" element={<Admin />} />
-      </Routes>
+
+
       {/* <Annocements /> */}
-      <Header />
+      {/* <Header /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
@@ -40,8 +39,9 @@ function App() {
         <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/success" element={<Success />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
