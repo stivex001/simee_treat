@@ -93,7 +93,7 @@ const Sidebar = () => {
         <Menu>
           <Title>Quick Menu</Title>
           <List>
-            <Link to="/users">
+            <Link to="/admin/users">
               <ListItem>
                 <Icon>
                   <PermIdentity />
