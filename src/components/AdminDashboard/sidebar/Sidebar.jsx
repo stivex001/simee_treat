@@ -61,20 +61,20 @@ const Icon = styled.div`
 `;
 
 const Sidebar = () => {
-  
-
   return (
     <Container>
       <Wrapper>
         <Menu>
           <Title>Dashboard</Title>
           <List>
-            <ListItem >
-              <Icon>
-                <LineStyle />
-              </Icon>
-              Home
-            </ListItem>
+            <Link to="/admin" style={{ fontSize: "12px", color: "inherit" }}>
+              <ListItem>
+                <Icon>
+                  <LineStyle />
+                </Icon>
+                Home
+              </ListItem>
+            </Link>
 
             <ListItem>
               <Icon>
@@ -93,7 +93,10 @@ const Sidebar = () => {
         <Menu>
           <Title>Quick Menu</Title>
           <List>
-            <Link to="/admin/users" style={{fontSize: '12px', color: 'inherit'}}>
+            <Link
+              to="/admin/users"
+              style={{ fontSize: "12px", color: "inherit" }}
+            >
               <ListItem>
                 <Icon>
                   <PermIdentity />
@@ -101,15 +104,18 @@ const Sidebar = () => {
                 Users
               </ListItem>
             </Link>
-            <Link to='/admin/products' style={{fontSize: '12px', color: 'inherit'}} >
-            <ListItem>
-              <Icon>
-                <Storefront />
-              </Icon>
-              Products
-            </ListItem>
+            <Link
+              to="/admin/products"
+              style={{ fontSize: "12px", color: "inherit" }}
+            >
+              <ListItem>
+                <Icon>
+                  <Storefront />
+                </Icon>
+                Products
+              </ListItem>
             </Link>
-            
+
             <ListItem>
               <Icon>
                 <AttachMoney />
