@@ -1,4 +1,5 @@
 import { CalendarViewDay, LocationSearching, MailOutline, PermIdentity, PhoneAndroid, Publish } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -137,7 +138,10 @@ const User = () => {
     <Container>
       <UserTitleContainer>
         <UserTitle>Edit User</UserTitle>
+        <Link to='/admin/newuser'>
         <AddButton>Create</AddButton>
+        </Link>
+        
       </UserTitleContainer>
       <UserContainer>
         <UserDisplay>
