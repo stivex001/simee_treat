@@ -93,7 +93,7 @@ const Sidebar = () => {
         <Menu>
           <Title>Quick Menu</Title>
           <List>
-            <Link to="/admin/users">
+            <Link to="/admin/users" style={{fontSize: '12px', color: 'inherit'}}>
               <ListItem>
                 <Icon>
                   <PermIdentity />
@@ -101,13 +101,15 @@ const Sidebar = () => {
                 Users
               </ListItem>
             </Link>
-
+            <Link to='/admin/products' style={{fontSize: '12px', color: 'inherit'}} >
             <ListItem>
               <Icon>
                 <Storefront />
               </Icon>
               Products
             </ListItem>
+            </Link>
+            
             <ListItem>
               <Icon>
                 <AttachMoney />
