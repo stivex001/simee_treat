@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Sidebar from "../../components/AdminDashboard/sidebar/Sidebar";
 import Topbar from "../../components/AdminDashboard/topbar/Topbar";
 import Home from "./home/Home";
+import NewProduct from "./newProduct/NewProduct";
 import Newuser from "./newuUer/Newuser";
 import Product from "./product/Product";
 import ProductList from "./products/ProductList";
@@ -26,7 +27,8 @@ const Admin = () => {
         {/* <User /> */}
         {/* <Newuser /> */}
         {/* <ProductList /> */}
-        <Product />
+        {/* <Product /> */}
+        <NewProduct />
         {/* <Routes>
           <Route path="/admin/home" element={<Home />} />
           <Route path="/admin/users" element={<UserList />} />

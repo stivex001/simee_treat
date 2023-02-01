@@ -199,7 +199,7 @@ const Product = () => {
                         <FileLabel for='file'>
                             <Publish style={{cursor: 'pointer'}} />
                         </FileLabel>
-                        <FileInput type='file' if='file' style={{display: 'none'}} />
+                        <FileInput type='file' id='file' style={{display: 'none'}} />
                     </Upload>
                     <UpdateButton>Update</UpdateButton>
                 </FormRight>
