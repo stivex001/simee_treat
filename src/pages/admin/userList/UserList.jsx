@@ -75,7 +75,7 @@ const UserList = () => {
       width: 150,
       renderCell: (params) => (
         <>
-          <Link to={"/user/" + params.row.id}>
+          <Link to={"/admin/user/" + params.row.id}>
             <Button>Edit</Button>
             </Link>
             <DeleteOutline
