@@ -25,7 +25,7 @@ function App() {
 
 
       {/* <Annocements /> */}
-      {/* <Header /> */}
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
@@ -41,7 +41,7 @@ function App() {
         <Route path="/success" element={<Success />} />
         <Route path="/admin" element={<Admin />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
