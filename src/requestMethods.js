@@ -1,14 +1,31 @@
 import axios from 'axios'
 
-const BASE_URL = 'http://localhost:8080/api/v1'
-// const TOKEN = (JSON.parse(JSON.parse(localStorage.getItem('persist:root')).user).currentUser.accessToken)
-const TOKEN = ''
+const BASE_URL = 'https://simee-treats-backend.vercel.app/api/v1'
 
-export const publicRequest = axios.create({
+const TOKEN = () => {
+    if (
+      JSON.parse(JSON.parse(localStorage.getItem('persist:root')).user)
+        .currentUser.token
+    ) {
+      return JSON.parse(JSON.parse(localStorage.getItem('persist:root')).user)
+        .currentUser.token;
+    } else { 
+      return '';
+    }
+  };
+  
+  export const publicRequest = axios.create({
     baseURL: BASE_URL,
-})
-
-export const userRequest = axios.create({
+  });
+  
+  export const userRequest = axios.create({
     baseURL: BASE_URL,
-    headers: {Authorization: `Bearer ${TOKEN}`}
-})
+  });
+  
+  userRequest.interceptors.request.use((config) => {
+    const token = TOKEN();
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  });

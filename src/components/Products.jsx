@@ -18,8 +18,8 @@ const Products = ({ cat, filters, sort }) => {
   useEffect(() => {
     const getProducts = async () => {
       const url = cat
-        ? `http://localhost:8080/api/v1/product?category=${cat}`
-        : `http://localhost:8080/api/v1/product`;
+        ? `https://simee-treats-backend.vercel.app/api/v1/product?category=${cat}`
+        : `https://simee-treats-backend.vercel.app/api/v1/product`;
       try {
         const res = await axios.get(url);
         setProducts(res.data);
