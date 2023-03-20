@@ -43,7 +43,6 @@ const Login = () => {
         navigate("/login");
       } else {
         navigate("/cart");
-        toast.success("Logged In successfully")
       }
 
   };
