@@ -14,6 +14,7 @@ import {
   Title,
   Wrapper,
 } from "./login.styles";
+import { CircularProgress } from "@mui/material";
 
 const Login = () => {
   const [username, setUserName] = useState("");
@@ -33,9 +34,17 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     login(dispatch, { username, password });
-    toast.success("Logged In successfully")
+    
 
-      setTimeout(() => navigate('/'), 1000)
+      // setTimeout(() => navigate('/'), 1000)
+
+      if (currentUser === "null") {
+        toast.error("These credentials does not match our records!")
+        navigate("/login");
+      } else {
+        navigate("/cart");
+        toast.success("Logged In successfully")
+      }
 
   };
   console.log(currentUser)
@@ -45,15 +54,21 @@ const Login = () => {
       <Wrapper>
         <Title>SIGN IN</Title>
         <Form onSubmit={handleLogin}> 
-          <Input placeholder="username" onChange={userNameOnChange} />
+        {error && <Error>These credentails do not match our records!</Error>}
+          <Input placeholder="username" onChange={userNameOnChange} required />
           <Input
             type="password"
             placeholder="password"
+            required
             onChange={passwordOnChange}
           />
-          {error && <Error>Something went wrong</Error>}
+          
           <Button disabled={isFetching}>
-            LOGIN
+          {isFetching ? (
+              <CircularProgress style={{ color: "white" }} />
+            ) : (
+              "LOGIN"
+            )}
           </Button>
           <Links to=''>FORGOT YOUR PASSWORD?</Links>
           <Links to='/register'>CREATE A NEW ACCOUNT</Links>
