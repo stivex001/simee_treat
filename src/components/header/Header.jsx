@@ -2,8 +2,9 @@ import { Close, Menu } from "@mui/icons-material";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Badge from "@mui/material/Badge";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
+import { logout } from "../../redux/apiCalls";
 import styles from "./Header.module.scss";
 
 const logo = (
@@ -22,6 +23,7 @@ const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const quantity = useSelector((state) => state.cart.quantity);
   const { currentUser } = useSelector((state) => state.user);
+  const dispatch = useDispatch()
 
   const toggleMenu = () => {
     setShowMenu((showMenu) => !showMenu);
@@ -30,6 +32,10 @@ const Header = () => {
   const hideMenu = () => {
     setShowMenu(false);
   };
+
+  const handleLogout = () => {
+    logout(dispatch())
+  }
 
   return (
     <header>
@@ -72,23 +78,23 @@ const Header = () => {
             </li>
           </ul>
           <div className={styles["header-right"]} onClick={hideMenu}>
-            {currentUser && (
+            {currentUser ? (
               <span className={styles.links}>
-              <NavLink className={activeLink} to="/login">
-                Login
-              </NavLink>
-              <NavLink className={activeLink} to="/register">
-                Register
-              </NavLink>
-            </span>
+                <NavLink onClick={handleLogout}>
+                  Logout
+                </NavLink>
+              </span>
+            ) : (
+              <span className={styles.links}>
+                <NavLink className={activeLink} to="/login">
+                  Login
+                </NavLink>
+                <NavLink className={activeLink} to="/register">
+                  Register
+                </NavLink>
+              </span>
             )}
-            <span className={styles.links}>
-              <NavLink className={activeLink} to="/login">
-                Logout
-              </NavLink>
-            </span>
-            
-            
+
             <span className={styles.cart}>
               <NavLink to="/cart">
                 <Badge badgeContent={quantity} color="primary">
