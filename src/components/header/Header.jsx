@@ -21,6 +21,7 @@ const activeLink = ({ isActive }) => (isActive ? `${styles.active}` : "");
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const quantity = useSelector((state) => state.cart.quantity);
+  const { currentUser } = useSelector((state) => state.user);
 
   const toggleMenu = () => {
     setShowMenu((showMenu) => !showMenu);
@@ -71,7 +72,8 @@ const Header = () => {
             </li>
           </ul>
           <div className={styles["header-right"]} onClick={hideMenu}>
-            <span className={styles.links}>
+            {currentUser && (
+              <span className={styles.links}>
               <NavLink className={activeLink} to="/login">
                 Login
               </NavLink>
@@ -79,6 +81,14 @@ const Header = () => {
                 Register
               </NavLink>
             </span>
+            )}
+            <span className={styles.links}>
+              <NavLink className={activeLink} to="/login">
+                Logout
+              </NavLink>
+            </span>
+            
+            
             <span className={styles.cart}>
               <NavLink to="/cart">
                 <Badge badgeContent={quantity} color="primary">

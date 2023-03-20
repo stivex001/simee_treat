@@ -37,7 +37,7 @@ function App() {
           element={user ? <Navigate to="/login" /> : <Register />}
         />
         <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={user ? <Cart /> : <Navigate to="/login" /> } />
         <Route path="/success" element={<Success />} />
         <Route path="/admin" element={<Admin />} />
       </Routes>
