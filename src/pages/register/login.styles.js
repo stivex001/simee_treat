@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { mobile } from "../../responsive";
 
@@ -56,7 +57,7 @@ export const Button = styled.button`
   }
 `;
 
-export const Link = styled.a`
+export const Links = styled(Link)`
 margin: 5px 0px;
 font-size: 12px;
 text-decoration: underline;
