@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../redux/apiCalls";
+import {toast, ToastContainer} from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css";
 import {
   Button,
   Container,
@@ -31,14 +33,12 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     login(dispatch, { username, password });
+    toast.success("Logged In successfully")
 
-    if (currentUser === 'null') {
-      navigate('/login')
-    }
-    else {
-      navigate('/')
-    }
+      setTimeout(() => navigate('/'), 1000)
+
   };
+  console.log(currentUser)
 
   return (
     <Container>
@@ -57,6 +57,7 @@ const Login = () => {
           </Button>
           <Links to=''>FORGOT YOUR PASSWORD?</Links>
           <Links to='/register'>CREATE A NEW ACCOUNT</Links>
+          <ToastContainer />
         </Form>
       </Wrapper>
     </Container>
