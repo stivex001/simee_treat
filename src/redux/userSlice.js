@@ -22,7 +22,7 @@ const userSlice = createSlice({
       state.isFetching = false;
       state.error = true;
     },
-    logoutSuccess: (state, action) => {
+    logoutSuccess: (state) => {
       state.message = true;
       state.currentUser = null;
       state.error = false;
